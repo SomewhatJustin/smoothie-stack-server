@@ -33,10 +33,10 @@ router.get('/getAll', async (req, res) => {
   }
 })
 
-// Get by ID
+// Get by path
 router.get('/getOne/:id', async (req, res) => {
   try {
-    const data = await Model.findById(req.params.id)
+    const data = await Model.find({ path: req.body.path })
     res.json(data)
   } catch (error) {
     res.status(500).json({ message: error.message })
