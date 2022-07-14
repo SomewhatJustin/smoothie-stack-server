@@ -6,8 +6,13 @@ const Model = require('../models/model')
 // Post Method
 router.post('/post', async (req, res) => {
   const data = new Model({
-    name: req.body.name,
-    age: req.body.age
+    isFeatured: req.body.isFeatured,
+    path: req.body.path,
+    recipe: {
+      ingredients: req.body.recipe.ingredients,
+      amount: req.body.recipe.amount,
+      notes: req.body.recipe.notes
+    }
   })
 
   try {
