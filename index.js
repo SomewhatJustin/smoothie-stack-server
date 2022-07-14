@@ -5,6 +5,7 @@ require('dotenv').config()
 
 
 const mongoString = process.env.DATABASE_URL
+const port = process.env.PORT || 5000
 
 mongoose.connect(mongoString)
 const database = mongoose.connection
@@ -20,8 +21,8 @@ database.once('connected', () => {
 const app = express()
 app.use(express.json())
 
-app.listen(4000, () => {
-  console.log(`Server listening at ${4000}`)
+app.listen(port, () => {
+  console.log(`Server listening at ${port}`)
 })
 
 app.use('/api', routes)
