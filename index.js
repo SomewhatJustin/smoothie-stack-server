@@ -8,7 +8,7 @@ app.use(cors())
 
 
 const mongoString = process.env.DATABASE_URL
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 3000
 
 mongoose.connect(mongoString)
 const database = mongoose.connection
