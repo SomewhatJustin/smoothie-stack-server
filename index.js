@@ -4,6 +4,8 @@ const routes = require('./routes/routes')
 const cors = require('cors')
 require('dotenv').config()
 
+app.use(cors())
+
 
 const mongoString = process.env.DATABASE_URL
 const port = process.env.PORT || 5000
