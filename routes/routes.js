@@ -23,11 +23,11 @@ router.post('/post', async (req, res) => {
   const data = new Model({
     isFeatured: req.body.isFeatured,
     path: req.body.path,
-    /* recipe: {
+    recipe: {
       ingredients: req.body.recipe.ingredients,
       amount: req.body.recipe.amount,
       notes: req.body.recipe.notes
-    } */
+    }
   })
 
   try {

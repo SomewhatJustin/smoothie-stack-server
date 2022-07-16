@@ -23,7 +23,7 @@ const port = process.env.PORT || 4000
 mongoose.connect(mongoString)
 const database = mongoose.connection
 
-database.on('error', (erorr) => {
+database.on('error', (error) => {
   console.log(error)
 })
 
