@@ -2,12 +2,12 @@ const mongoose = require('mongoose')
 
 const dataSchema = new mongoose.Schema({
   isFeatured: {
-    required: true,
+    required: false,
     type: Boolean,
     default: false
   },
   path: {
-    required: true,
+    required: false,
     type: String
   },
   recipe: {

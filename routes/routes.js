@@ -1,18 +1,31 @@
 const express = require('express')
 const router = express.Router()
 const Model = require('../models/model')
+const bodyParser = require('body-parser')
+const jsonParser = bodyParser.json();
+
+
+router.use(bodyParser.json())
+
+
+router.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 
 // Post Method
 router.post('/post', async (req, res) => {
+  console.log(req.body)
   const data = new Model({
     isFeatured: req.body.isFeatured,
     path: req.body.path,
-    recipe: {
+    /* recipe: {
       ingredients: req.body.recipe.ingredients,
       amount: req.body.recipe.amount,
       notes: req.body.recipe.notes
-    }
+    } */
   })
 
   try {

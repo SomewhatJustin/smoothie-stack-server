@@ -1,15 +1,15 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const routes = require('./routes/routes')
-const cors = require('cors')
 require('dotenv').config()
 
 const app = express()
+const cors = require('cors')
+
+
+app.use(cors());
+
 app.use(express.json())
-app.use(cors({
-  methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
-  origin: ['https://mysmoothiestack.com', 'http://localhost:3000']
-}));
 
 
 const mongoString = process.env.DATABASE_URL
